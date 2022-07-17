@@ -8,6 +8,13 @@ font-family: 'Roboto', sans-serif; */
 }
 
 /* utils */
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
 .list {
   list-style: none;
   padding-left: 0;
@@ -23,7 +30,19 @@ font-family: 'Roboto', sans-serif; */
   padding-left: 15px;
   padding-right: 15px;
   max-width: 1200px;
-  outline: 2px solid tomato;
+}
+
+.invisible {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
 body {
@@ -33,15 +52,15 @@ body {
   font-size: 14px;
   letter-spacing: 0.03em;
 }
+.section {
+  padding-bottom: 94px;
+}
 /* Logo */
 .logo {
+  display: block;
+  padding: 24px 0;
   font-family: "Raleway", sans-serif;
   font-size: 26px;
-}
-li,
-.logo,
-.contact {
-  outline: 2px solid navy;
 }
 
 .logo-color {
@@ -77,8 +96,7 @@ li,
 
 .nav-list .link {
   display: block;
-  padding-top: 32px;
-  padding-bottom: 32px;
+  padding: 32px 0;
 
   color: var(--title-color);
 
@@ -102,6 +120,7 @@ li,
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  min-width: 122px;
 
   color: var(--prymary-text-color);
 
@@ -117,9 +136,22 @@ li,
 }
 
 /* Hero */
+.section.hero {
+  padding: 0;
+  margin-bottom: 94px;
+}
+.hero {
+  background-color: #2f303a;
+  text-align: center;
+  /* пока нет контента задаю высоту */
+  min-height: 600px;
+}
 
 .hero-title {
-  color: var(--title-color);
+  /* пока не знаем фон */
+  margin-bottom: 30px;
+
+  color: var(--primary-white-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -129,12 +161,24 @@ li,
 }
 
 .hero .button {
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  margin-bottom: auto;
+
   color: var(--primary-white-color);
+
   background-color: var(--accent-color);
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
+  text-align: center;
+  padding: 10px 32px;
+
+  min-width: 200px;
+  min-height: 50;
 }
 .hero .button:hover,
 .hero .button:focus {
@@ -147,7 +191,18 @@ li,
 
 /* Особенности */
 
-.features .title {
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+}
+
+.features-list > .item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-right: 30px;
+}
+
+.features-list .title {
   color: var(--title-color);
   font-size: 14px;
   line-height: 1.14;
@@ -155,53 +210,117 @@ li,
   text-transform: uppercase;
 }
 
-.features .text {
+.features-list .text {
   line-height: 1.71;
 }
 
 /* Skills */
 .section-title {
+  margin-bottom: 50px;
+
   color: var(--title-color);
+
   font-size: 36px;
   line-height: 1.17;
   text-align: center;
   letter-spacing: 0.03em;
 }
 
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+  margin-bottom: -30px;
+}
+
+.skill-list > .item {
+  flex-basis: calc(100% / 3 - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.skill-list .img-box {
+  display: block;
+  max-width: 100%;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 /* Team */
+.team {
+  padding-top: 94px;
+  background: #f5f4fa;
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -30px;
+  margin-bottom: -30px;
+}
+
+.team-list .item {
+  flex-basis: calc(100% / 4 - 30px);
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.team-card > img {
+  display: block;
+  max-width: 100%;
+}
 
 .team-card {
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.team-member-description {
+  padding: 30px 0;
 }
 .team-card .title {
   color: var(--title-color);
   font-size: 16px;
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .speshiality {
   font-size: 16px;
+  margin-bottom: 30px;
 }
 
 /* Futer */
 .futer {
+  padding: 60px 0;
+
   background-color: #2f303a;
   color: var(--primary-white-color);
 }
 
 .futer .logo {
   color: inherit;
+  padding: 0;
+  margin-bottom: 20px;
 }
 
 .address {
+  display: flex;
+  flex-direction: column;
+
   font-style: normal;
   line-height: 1.71;
 }
 
 .address .contact {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.address .item:not(:last-child) {
+  margin-bottom: 9px;
 }
 
 /* Portfolio.html */
