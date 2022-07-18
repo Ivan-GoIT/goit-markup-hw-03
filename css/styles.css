@@ -379,6 +379,10 @@ body {
   flex-basis: calc(100%calc (-1 * var(--standard-clearance)) / 3);
   margin-right: var(--standard-clearance);
   margin-bottom: var(--standard-clearance);
+
+}
+.work-card{
+  border: 1px solid #EEEEEE;
 }
 
 .work-description {
