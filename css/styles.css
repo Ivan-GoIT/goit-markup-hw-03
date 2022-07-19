@@ -55,6 +55,7 @@ body {
 }
 .section {
   padding-bottom: 94px;
+  padding-top: 94px;
 }
 /* Logo */
 .logo {
@@ -137,15 +138,12 @@ body {
 }
 
 /* Hero */
+
 .section.hero {
-  padding: 0;
-  margin-bottom: 94px;
-}
-.hero {
   background-color: #2f303a;
   text-align: center;
-  /* пока нет контента задаю высоту */
   min-height: 600px;
+  padding: 200px 0;
 }
 
 .hero-title {
@@ -216,6 +214,9 @@ body {
 }
 
 /* Skills */
+.section.skills {
+  padding-top: 0;
+}
 .section-title {
   margin-bottom: 50px;
 
@@ -334,15 +335,11 @@ body {
 }
 
 /* Filter */
-.filter.section {
-  padding-top: 94px;
-}
 
 .filter-list {
   display: flex;
   justify-content: center;
-  padding-bottom: 18px;
-  margin-bottom: 34px;
+  margin-bottom: 50px;
 }
 
 .filter-list > .item:not(:last-child) {
@@ -376,17 +373,14 @@ body {
 /* Works */
 
 .work-list .item {
-  flex-basis: calc(100%calc (-1 * var(--standard-clearance)) / 3);
+  flex-basis: calc(100%calc (-1 * var(--standard-clearance)-px) / 3);
   margin-right: var(--standard-clearance);
   margin-bottom: var(--standard-clearance);
-
-}
-.work-card{
-  border: 1px solid #EEEEEE;
 }
 
 .work-description {
-  margin: 20px 24px;
+  padding: 20px 24px;
+  border: 1px solid #eeeeee;
 }
 .work-list .title {
   margin-bottom: 4px;
